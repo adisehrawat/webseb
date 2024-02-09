@@ -3,9 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url("https://t3.ftcdn.net/jpg/01/08/02/42/240_F_108024244_E8bXEBXVINrN40MgHSvJg5jitoy9mB2q.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        form{
+            background-color: transparent;
+            color: #fff;
+            border-radius: 20px;
+            width: max-content;
+            height: max-content;
+            position: relative;
+            top: 10%;
+            border: 1px solid #fff;
+            box-shadow: 20px 20px 60px #fff; 
+            padding-top: 10px;
+        }
+        div{
+            width: fit-content;
+            margin-bottom: 10px;
+            padding: 2px;
+        }
+        .text{
+            position: relative;
+            justify-content: center;
+            text-align: center;
+            max-width: 450px;
+            margin-left: 10px;
+            margin-top: 20px;
+            border-bottom: 2px;
+        }
+        .text input{
+            width: 100%;
+            height: 50px;
+            background: transparent;
+            border: 1px solid #fff;
+            border-radius: 20px;
+            outline: none;
+            font-size: 1rem;
+            padding: 0 35px 0 5px;
+            color: #0000;
+        }
+
+        :root {
+            font-size: calc(32px + (40 - 32)*(100vw - 320px)/ (1024 - 320));
+        }
+        .radio label{
+            cursor: pointer;
+            display: block;
+            font-weight: bold;
+            text-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.2);
+            transition: color 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        }
+        .radio label:not(:last-of-type) {
+            margin-bottom: 1.5em;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <form action="post">
+            <div class="text">
+                <input type="text" id="text" name="text" placeholder="Enter your name here">
+            </div>
+            
+            <div class="radio">
+                <p>Choose your fav language: </p><br>
+                <input type="radio" id="a ra" name="fav_language" value="HTML" checked>
+                <label for="a"><span></span>HTML</label>
+                <input type="radio" id="b ra" name="fav_language" value="CSS">
+                <label for="b"><span></span>CSS</label>
+                <input type="radio" id="c ra" name="fav_language" value="JavaScript">
+                <label for="c"><span></span>JavaScript</label>
+            </div>
+            <div class="checkbox">
+                <label for="sa">Select courses which are completed:</label><br>
+                <input type="checkbox" id="toc sa" name="toc" value="toc">
+                <label for="toc">TOC</label>
+                <input type="checkbox" id="OS sa" name="OS" value="OS">
+                <label for="OS">OS</label>
+                <input type="checkbox" id="CN sa" name="CN" value="CN">
+                <label for="vehicle3">CN</label>
+            </div>
+            <div class="date">
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday">
+            </div>
+            <div class="time">
+                <label for="appt">Select a time:</label>
+                <input type="time" id="appt" name="appt">
+            </div>
+            <div class="datetime-loacl">
+                <label for="birthdaytime">Birthday (date and time):</label>
+                <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+            </div>
+            <div class="tel">
+                <label for="phone">Enter your phone number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+            </div>
+            <div class="email">
+                <label for="email">Enter your email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="pass">
+                <label for="password">Enter your password:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="url">
+                <label for="url">Enter an https:// URL:</label>
+                <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" required />
+            </div>
+            <div class="file">
+                <label for="myfile">Select a file:</label>
+                <input type="file" id="myfile" name="myfile">
+            </div>
+            <div class="image">
+                <input type="image" src="sub.png" alt="Submit" width="48" height="48">
+            </div>
+            <div class="search">
+                <label for="gsearch">Search Google:</label>
+                <input type="search" id="gsearch" name="gsearch">
+            </div>
+            <div class="month">
+                <label for="bdaymonth">Birthday (month and year):</label>
+                <input type="month" id="bdaymonth" name="bdaymonth">
+            </div>
+            <div class="week">
+                <label for="week">Select a week:</label>
+                <input type="week" id="week" name="week">
+            </div>
+            <div class="number">
+                <label for="quantity">Enter a number:</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="5">
+            </div>
+            <div class="range">
+                <label for="vol">Enter youyr weight:</label>
+                <input type="range" id="vol" name="vol" min="50" max="100">
+            </div>
+            <div class="reset">
+                <label for="reset">To reset click here: </label>
+                <input type="reset" id="reset" name="reset">
+            </div>
+            <div class="color">
+                <label for="favcolor">Select your favorite color:</label>
+                <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+            </div>
+            <div class="hidden">
+                <input type="hidden" id="custId" name="custId" value="3487">
+            </div>
+            <div class="button">
+                <button type="button" onclick="SubmitEvent">Submit</button>
+            </div>
+        </form>
+    </div>
     
 </body>
 </html>
